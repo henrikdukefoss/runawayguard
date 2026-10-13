@@ -1,0 +1,48 @@
+{
+  "name": "runawayguard",
+  "version": "0.1.0",
+  "description": "A local spend limit for coding agents: a small proxy that prices every request at API list prices and returns HTTP 402 once your limit is reached.",
+  "type": "module",
+  "bin": {
+    "runawayguard": "bin/runawayguard.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "sample": "node scripts/make-sample.js",
+    "update-prices": "node scripts/update-fallback-prices.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "opencode",
+    "cline",
+    "aider",
+    "anthropic",
+    "openai",
+    "proxy",
+    "spend-limit",
+    "budget",
+    "cost",
+    "llm",
+    "cli"
+  ],
+  "author": "Standard Compute (https://standardcompute.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/henrikdukefoss/runawayguard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrikdukefoss/runawayguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/henrikdukefoss/runawayguard/issues"
+  }
+}

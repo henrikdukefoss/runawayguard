@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+# usage logs you write locally
+*.jsonl

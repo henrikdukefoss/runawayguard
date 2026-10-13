@@ -1,0 +1,40 @@
+$ npx github:henrikdukefoss/runawayguard --limit 1.50 --upstream anthropic --offline
+runawayguard 0.1.0
+
+  proxy      http://127.0.0.1:8402  ->  https://api.anthropic.com
+  limit      $1.50 per session, warning at $1.20, then HTTP 402
+  prices     LiteLLM (bundled), 2026-10-13
+
+  Point your agent at the proxy, for example:
+    Claude Code    ANTHROPIC_BASE_URL=http://127.0.0.1:8402 ENABLE_TOOL_SEARCH=true claude
+
+  Ctrl+C stops the proxy and prints a summary.
+
+14:02:08  claude-haiku-5-5               812 in     38 out   $0.0001     $0.00  0%
+14:02:17  claude-opus-5-5              40.6K in   1.8K out   $0.2376     $0.23  15%
+14:02:58  claude-opus-5-5              48.1K in   2.3K out   $0.1019     $0.33  22%
+14:03:35  claude-opus-5-5              60.7K in   3.9K out   $0.1536     $0.49  32%
+14:04:27  claude-opus-5-5              66.9K in   1.2K out   $0.0688     $0.56  37%
+14:04:31  claude-haiku-5-5              1.5K in     61 out   $0.0002     $0.56  37%
+14:05:37  claude-opus-5-5              81.9K in   4.5K out   $0.1794     $0.74  49%
+14:06:15  claude-opus-5-5              90.5K in   2.8K out   $0.1166     $0.85  57%
+14:07:26  claude-opus-5-5             106.8K in   5.1K out   $0.2033     $1.06  70%
+14:08:10  claude-opus-5-5             116.2K in   3.3K out   $0.1362     $1.19  79%
+14:09:08  claude-opus-5-5             130.0K in   4.9K out   $0.1912     $1.38  92%
+runawayguard: over 80% of the $1.50 session limit used.
+14:09:43  claude-opus-5-5             137.8K in   3.0K out   $0.1263     $1.51  101%
+runawayguard: $1.50 session limit reached. New requests are blocked with HTTP 402.
+runawayguard: blocked POST /v1/messages (HTTP 402).
+^C
+runawayguard stopped after 10m
+
+  MODEL                        REQUESTS    TOKENS  CACHE READ       USD
+  claude-opus-5-5                    10    912.5K      736.3K     $1.51
+  claude-haiku-5-5                    2      2.4K           0     $0.00
+  TOTAL                              12    914.9K      736.3K     $1.51
+  Tokens include input, output and cache reads and writes.
+
+  2 requests were blocked at the $1.50 session limit.
+  List prices from LiteLLM (bundled), 2026-10-13. Your provider's invoice is the final word.
+
+runawayguard, made by Standard Compute (standardcompute.com)
