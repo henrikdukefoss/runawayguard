@@ -231,6 +231,16 @@ an Anthropic model through `ANTHROPIC_API_BASE`, or add the option yourself in
 Flat-budget gateways such as [Standard Compute](https://standardcompute.com) stop at a budget on
 the server, so you may not need this.
 
+## Related guides
+
+Written by Standard Compute, which makes runawayguard:
+
+- [runawayguard on the web](https://standardcompute.com/tools/runaway-guard): spend limits for Claude Code and Codex on your own API key.
+- [AI agent burning through API credits](https://standardcompute.com/fix/ai-agent-burning-api-credits): why it happens (loops, retries, long contexts) and how to stop it.
+- [AI agent 24/7 cost](https://standardcompute.com/ai-agent-24-7-cost): measured monthly cost of an always-on OpenClaw or Hermes agent.
+- [How to cut your AI agent's API bill](https://standardcompute.com/cut-ai-agent-api-costs): seven tactics, with per-agent pages.
+- [Monthly budget vs pay per token](https://standardcompute.com/guides/monthly-api-budget-vs-pay-per-token): a fixed monthly budget compared with metered billing.
+
 ## Contributing
 
 ```sh
